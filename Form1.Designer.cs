@@ -64,15 +64,15 @@
             label4 = new Label();
             tpBuscarVinculacion = new TabPage();
             panel2 = new Panel();
-            lbBuscarVinculacion = new Label();
+            dvgConsultaVinculacion = new DataGridView();
             lbVinculacionNumContratos = new Label();
-            dtpVinculacionFechaPick = new DateTimePicker();
+            dtpBuscarVincFecha = new DateTimePicker();
             btnVinculacionBuscar = new Button();
             lbVinculacionFecha = new Label();
             label8 = new Label();
             tpConsultaContrato = new TabPage();
             panel3 = new Panel();
-            dvgConsultaContrato = new DataGridView();
+            lbConsultaContratoNum = new Label();
             btnConsultaContrato = new Button();
             label6 = new Label();
             tbcGestion.SuspendLayout();
@@ -84,9 +84,9 @@
             panel1.SuspendLayout();
             tpBuscarVinculacion.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgConsultaVinculacion).BeginInit();
             tpConsultaContrato.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dvgConsultaContrato).BeginInit();
             SuspendLayout();
             // 
             // tbcGestion
@@ -243,11 +243,12 @@
             btnProductorGuardarR.TabIndex = 11;
             btnProductorGuardarR.Text = "Guardar";
             btnProductorGuardarR.UseVisualStyleBackColor = true;
+            btnProductorGuardarR.Click += btnProductorGuardarR_Click;
             // 
             // cbxProductorClasificacion
             // 
             cbxProductorClasificacion.FormattingEnabled = true;
-            cbxProductorClasificacion.Items.AddRange(new object[] { "Ejecutivo", "Delegado", "Productor" });
+            cbxProductorClasificacion.Items.AddRange(new object[] { "Rock", "Pop", "Metal" });
             cbxProductorClasificacion.Location = new Point(172, 172);
             cbxProductorClasificacion.Name = "cbxProductorClasificacion";
             cbxProductorClasificacion.Size = new Size(206, 23);
@@ -256,7 +257,7 @@
             // cbxProductorAniosExp
             // 
             cbxProductorAniosExp.FormattingEnabled = true;
-            cbxProductorAniosExp.Items.AddRange(new object[] { "menor a 5", "entre 5-10", "entre 11-20", "mayor 20 " });
+            cbxProductorAniosExp.Items.AddRange(new object[] { "5", "10", "20", "30" });
             cbxProductorAniosExp.Location = new Point(172, 136);
             cbxProductorAniosExp.Name = "cbxProductorAniosExp";
             cbxProductorAniosExp.Size = new Size(206, 23);
@@ -391,6 +392,7 @@
             btnVincualacionGuardar.TabIndex = 7;
             btnVincualacionGuardar.Text = "Guardar";
             btnVincualacionGuardar.UseVisualStyleBackColor = true;
+            btnVincualacionGuardar.Click += btnVincualacionGuardar_Click;
             // 
             // txtVinculacionTarjetaProfesional
             // 
@@ -450,9 +452,9 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(lbBuscarVinculacion);
+            panel2.Controls.Add(dvgConsultaVinculacion);
             panel2.Controls.Add(lbVinculacionNumContratos);
-            panel2.Controls.Add(dtpVinculacionFechaPick);
+            panel2.Controls.Add(dtpBuscarVincFecha);
             panel2.Controls.Add(btnVinculacionBuscar);
             panel2.Controls.Add(lbVinculacionFecha);
             panel2.Controls.Add(label8);
@@ -461,47 +463,47 @@
             panel2.Size = new Size(513, 345);
             panel2.TabIndex = 3;
             // 
-            // lbBuscarVinculacion
+            // dvgConsultaVinculacion
             // 
-            lbBuscarVinculacion.AutoSize = true;
-            lbBuscarVinculacion.Location = new Point(167, 142);
-            lbBuscarVinculacion.Name = "lbBuscarVinculacion";
-            lbBuscarVinculacion.Size = new Size(37, 15);
-            lbBuscarVinculacion.TabIndex = 13;
-            lbBuscarVinculacion.Text = "______";
+            dvgConsultaVinculacion.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgConsultaVinculacion.Location = new Point(59, 144);
+            dvgConsultaVinculacion.Name = "dvgConsultaVinculacion";
+            dvgConsultaVinculacion.Size = new Size(394, 174);
+            dvgConsultaVinculacion.TabIndex = 13;
             // 
             // lbVinculacionNumContratos
             // 
             lbVinculacionNumContratos.AutoSize = true;
             lbVinculacionNumContratos.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbVinculacionNumContratos.Location = new Point(35, 140);
+            lbVinculacionNumContratos.Location = new Point(198, 112);
             lbVinculacionNumContratos.Name = "lbVinculacionNumContratos";
             lbVinculacionNumContratos.Size = new Size(124, 17);
             lbVinculacionNumContratos.TabIndex = 12;
             lbVinculacionNumContratos.Text = " :Numero Contratos";
             lbVinculacionNumContratos.TextAlign = ContentAlignment.TopRight;
             // 
-            // dtpVinculacionFechaPick
+            // dtpBuscarVincFecha
             // 
-            dtpVinculacionFechaPick.Location = new Point(167, 73);
-            dtpVinculacionFechaPick.Name = "dtpVinculacionFechaPick";
-            dtpVinculacionFechaPick.Size = new Size(200, 23);
-            dtpVinculacionFechaPick.TabIndex = 10;
+            dtpBuscarVincFecha.Location = new Point(172, 33);
+            dtpBuscarVincFecha.Name = "dtpBuscarVincFecha";
+            dtpBuscarVincFecha.Size = new Size(200, 23);
+            dtpBuscarVincFecha.TabIndex = 10;
             // 
             // btnVinculacionBuscar
             // 
-            btnVinculacionBuscar.Location = new Point(217, 110);
+            btnVinculacionBuscar.Location = new Point(222, 70);
             btnVinculacionBuscar.Name = "btnVinculacionBuscar";
             btnVinculacionBuscar.Size = new Size(75, 23);
             btnVinculacionBuscar.TabIndex = 7;
             btnVinculacionBuscar.Text = "Buscar";
             btnVinculacionBuscar.UseVisualStyleBackColor = true;
+            btnVinculacionBuscar.Click += btnVinculacionBuscar_Click;
             // 
             // lbVinculacionFecha
             // 
             lbVinculacionFecha.AutoSize = true;
             lbVinculacionFecha.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbVinculacionFecha.Location = new Point(30, 79);
+            lbVinculacionFecha.Location = new Point(35, 39);
             lbVinculacionFecha.Name = "lbVinculacionFecha";
             lbVinculacionFecha.Size = new Size(87, 17);
             lbVinculacionFecha.TabIndex = 2;
@@ -530,7 +532,7 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(dvgConsultaContrato);
+            panel3.Controls.Add(lbConsultaContratoNum);
             panel3.Controls.Add(btnConsultaContrato);
             panel3.Controls.Add(label6);
             panel3.Location = new Point(55, 23);
@@ -538,13 +540,16 @@
             panel3.Size = new Size(513, 345);
             panel3.TabIndex = 4;
             // 
-            // dvgConsultaContrato
+            // lbConsultaContratoNum
             // 
-            dvgConsultaContrato.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgConsultaContrato.Location = new Point(35, 68);
-            dvgConsultaContrato.Name = "dvgConsultaContrato";
-            dvgConsultaContrato.Size = new Size(447, 242);
-            dvgConsultaContrato.TabIndex = 11;
+            lbConsultaContratoNum.AutoSize = true;
+            lbConsultaContratoNum.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbConsultaContratoNum.Location = new Point(217, 67);
+            lbConsultaContratoNum.Name = "lbConsultaContratoNum";
+            lbConsultaContratoNum.Size = new Size(23, 17);
+            lbConsultaContratoNum.TabIndex = 8;
+            lbConsultaContratoNum.Text = "___";
+            lbConsultaContratoNum.TextAlign = ContentAlignment.TopRight;
             // 
             // btnConsultaContrato
             // 
@@ -554,6 +559,7 @@
             btnConsultaContrato.TabIndex = 7;
             btnConsultaContrato.Text = "Consultar Contratos";
             btnConsultaContrato.UseVisualStyleBackColor = true;
+            btnConsultaContrato.Click += btnConsultaContrato_Click;
             // 
             // label6
             // 
@@ -586,10 +592,10 @@
             tpBuscarVinculacion.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgConsultaVinculacion).EndInit();
             tpConsultaContrato.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dvgConsultaContrato).EndInit();
             ResumeLayout(false);
         }
 
@@ -632,16 +638,14 @@
         private DateTimePicker dtpVinculacionFechaFin;
         private DateTimePicker dtpVinculacionFechaIni;
         private Panel panel2;
-        private DateTimePicker dtpVinculacionFechaPick;
+        private DateTimePicker dtpBuscarVincFecha;
         private Button btnVinculacionBuscar;
         private Label lbVinculacionFecha;
         private Label label8;
         private Panel panel3;
-        private DataGridView dvgConsultaContrato;
         private Button btnConsultaContrato;
         private Label label6;
         private Label lbVinculacionNumContratos;
-        private Label lbBuscarVinculacion;
         private Button btnProductorGuardarR;
 
         #region Windows Form Designer generated code
@@ -651,6 +655,9 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         #endregion
+
+        private DataGridView dvgConsultaVinculacion;
+        private Label lbConsultaContratoNum;
     }
 
 }

@@ -10,7 +10,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DBIIRecordCompany.datos
 {
-    class Datos
+    class Data
     {
         /*paso 1: crear la cadena de conexión*/
         string cadenaConexion = "Data Source=localhost;Persist Security Info=True;User ID=user_developer;Password=oracle;";
@@ -18,7 +18,7 @@ namespace DBIIRecordCompany.datos
 
         //paso 2: crear el metodo que eejecuta una operación DML
         //insert, update, delete
-        public int ejecutarDML(string consulta)
+        public int ExecuteDML(string consulta)
         {
             int filasAfectadas = 0;
             //paso 1: creo una conexion
@@ -45,7 +45,7 @@ namespace DBIIRecordCompany.datos
         }
 
         //metodo para ejecutar sentencias SELECT
-        public DataSet ejecutarSELECT(string consulta)
+        public DataSet ExecuteSELECT(string consulta)
         {
             //paso 1: creo un objeto vacio de tipo DataSet
             DataSet ds = new DataSet();
@@ -54,7 +54,7 @@ namespace DBIIRecordCompany.datos
             //paso 2: creo un adaptador
             OracleDataAdapter miAdaptador = new OracleDataAdapter(consulta, cadenaConexion);
             //paso 3: llenar el data set
-            miAdaptador.Fill(ds, "ResultadoDatos");
+            miAdaptador.Fill(ds, "dataResult");
             return ds;
         }
 
