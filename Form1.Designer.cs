@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tbcGestion = new TabControl();
             tpRegistroEmpresa = new TabPage();
             pnlRegistroEmpresa = new Panel();
@@ -105,17 +106,25 @@
             // 
             // tpRegistroEmpresa
             // 
+            tpRegistroEmpresa.BackColor = Color.LightBlue;
+            tpRegistroEmpresa.BackgroundImage = (Image)resources.GetObject("tpRegistroEmpresa.BackgroundImage");
+            tpRegistroEmpresa.BackgroundImageLayout = ImageLayout.Stretch;
+            tpRegistroEmpresa.BorderStyle = BorderStyle.FixedSingle;
             tpRegistroEmpresa.Controls.Add(pnlRegistroEmpresa);
+            tpRegistroEmpresa.ForeColor = SystemColors.ActiveCaptionText;
             tpRegistroEmpresa.Location = new Point(4, 24);
             tpRegistroEmpresa.Name = "tpRegistroEmpresa";
             tpRegistroEmpresa.Padding = new Padding(3);
             tpRegistroEmpresa.Size = new Size(760, 398);
             tpRegistroEmpresa.TabIndex = 0;
             tpRegistroEmpresa.Text = "Registro Empresa";
-            tpRegistroEmpresa.UseVisualStyleBackColor = true;
             // 
             // pnlRegistroEmpresa
             // 
+            pnlRegistroEmpresa.BackColor = SystemColors.ButtonFace;
+            pnlRegistroEmpresa.BackgroundImage = (Image)resources.GetObject("pnlRegistroEmpresa.BackgroundImage");
+            pnlRegistroEmpresa.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlRegistroEmpresa.BorderStyle = BorderStyle.Fixed3D;
             pnlRegistroEmpresa.Controls.Add(btnEmpresaGuardar);
             pnlRegistroEmpresa.Controls.Add(rbEmpresaCasaMatriz);
             pnlRegistroEmpresa.Controls.Add(rbEmpresaSubsidiaria);
@@ -131,7 +140,9 @@
             // 
             // btnEmpresaGuardar
             // 
-            btnEmpresaGuardar.Location = new Point(205, 221);
+            btnEmpresaGuardar.BackgroundImageLayout = ImageLayout.None;
+            btnEmpresaGuardar.FlatStyle = FlatStyle.Popup;
+            btnEmpresaGuardar.Location = new Point(218, 221);
             btnEmpresaGuardar.Name = "btnEmpresaGuardar";
             btnEmpresaGuardar.Size = new Size(75, 23);
             btnEmpresaGuardar.TabIndex = 7;
@@ -142,24 +153,26 @@
             // rbEmpresaCasaMatriz
             // 
             rbEmpresaCasaMatriz.AutoSize = true;
+            rbEmpresaCasaMatriz.BackColor = Color.NavajoWhite;
             rbEmpresaCasaMatriz.Location = new Point(284, 144);
             rbEmpresaCasaMatriz.Name = "rbEmpresaCasaMatriz";
             rbEmpresaCasaMatriz.Size = new Size(86, 19);
             rbEmpresaCasaMatriz.TabIndex = 6;
             rbEmpresaCasaMatriz.TabStop = true;
             rbEmpresaCasaMatriz.Text = "Casa Matriz";
-            rbEmpresaCasaMatriz.UseVisualStyleBackColor = true;
+            rbEmpresaCasaMatriz.UseVisualStyleBackColor = false;
             // 
             // rbEmpresaSubsidiaria
             // 
             rbEmpresaSubsidiaria.AutoSize = true;
+            rbEmpresaSubsidiaria.BackColor = Color.NavajoWhite;
             rbEmpresaSubsidiaria.Location = new Point(172, 144);
             rbEmpresaSubsidiaria.Name = "rbEmpresaSubsidiaria";
             rbEmpresaSubsidiaria.Size = new Size(82, 19);
             rbEmpresaSubsidiaria.TabIndex = 5;
             rbEmpresaSubsidiaria.TabStop = true;
             rbEmpresaSubsidiaria.Text = "Subsidiaria";
-            rbEmpresaSubsidiaria.UseVisualStyleBackColor = true;
+            rbEmpresaSubsidiaria.UseVisualStyleBackColor = false;
             // 
             // txtEmpresaNombre
             // 
@@ -178,38 +191,44 @@
             // lbEmpresaTipo
             // 
             lbEmpresaTipo.AutoSize = true;
+            lbEmpresaTipo.BackColor = Color.Transparent;
             lbEmpresaTipo.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbEmpresaTipo.Location = new Point(35, 146);
             lbEmpresaTipo.Name = "lbEmpresaTipo";
-            lbEmpresaTipo.Size = new Size(33, 17);
+            lbEmpresaTipo.Size = new Size(40, 17);
             lbEmpresaTipo.TabIndex = 2;
-            lbEmpresaTipo.Text = "Tipo";
+            lbEmpresaTipo.Text = " :Tipo";
             lbEmpresaTipo.TextAlign = ContentAlignment.TopRight;
             // 
             // lbEmpresaNombre
             // 
             lbEmpresaNombre.AutoSize = true;
+            lbEmpresaNombre.BackColor = Color.Transparent;
             lbEmpresaNombre.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbEmpresaNombre.Location = new Point(35, 110);
             lbEmpresaNombre.Name = "lbEmpresaNombre";
-            lbEmpresaNombre.Size = new Size(55, 17);
+            lbEmpresaNombre.Size = new Size(62, 17);
             lbEmpresaNombre.TabIndex = 1;
-            lbEmpresaNombre.Text = "Nombre";
+            lbEmpresaNombre.Text = " :Nombre";
             lbEmpresaNombre.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lbEmpresaId
             // 
             lbEmpresaId.AutoSize = true;
+            lbEmpresaId.BackColor = Color.Transparent;
             lbEmpresaId.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbEmpresaId.Location = new Point(35, 78);
             lbEmpresaId.Name = "lbEmpresaId";
-            lbEmpresaId.Size = new Size(89, 17);
+            lbEmpresaId.Size = new Size(96, 17);
             lbEmpresaId.TabIndex = 0;
-            lbEmpresaId.Text = "Identificación";
+            lbEmpresaId.Text = " :Identificación";
             lbEmpresaId.TextAlign = ContentAlignment.TopRight;
             // 
             // tpRegistroArtista
             // 
+            tpRegistroArtista.BackgroundImage = (Image)resources.GetObject("tpRegistroArtista.BackgroundImage");
+            tpRegistroArtista.BackgroundImageLayout = ImageLayout.Stretch;
+            tpRegistroArtista.BorderStyle = BorderStyle.FixedSingle;
             tpRegistroArtista.Controls.Add(pnlRegistroArtista);
             tpRegistroArtista.Location = new Point(4, 24);
             tpRegistroArtista.Name = "tpRegistroArtista";
@@ -221,6 +240,9 @@
             // 
             // pnlRegistroArtista
             // 
+            pnlRegistroArtista.BackgroundImage = (Image)resources.GetObject("pnlRegistroArtista.BackgroundImage");
+            pnlRegistroArtista.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlRegistroArtista.BorderStyle = BorderStyle.Fixed3D;
             pnlRegistroArtista.Controls.Add(btnProductorGuardarR);
             pnlRegistroArtista.Controls.Add(cbxProductorClasificacion);
             pnlRegistroArtista.Controls.Add(cbxProductorAniosExp);
@@ -237,12 +259,14 @@
             // 
             // btnProductorGuardarR
             // 
-            btnProductorGuardarR.Location = new Point(224, 229);
+            btnProductorGuardarR.BackColor = Color.WhiteSmoke;
+            btnProductorGuardarR.FlatStyle = FlatStyle.Popup;
+            btnProductorGuardarR.Location = new Point(217, 229);
             btnProductorGuardarR.Name = "btnProductorGuardarR";
             btnProductorGuardarR.Size = new Size(75, 23);
             btnProductorGuardarR.TabIndex = 11;
             btnProductorGuardarR.Text = "Guardar";
-            btnProductorGuardarR.UseVisualStyleBackColor = true;
+            btnProductorGuardarR.UseVisualStyleBackColor = false;
             btnProductorGuardarR.Click += btnProductorGuardarR_Click;
             // 
             // cbxProductorClasificacion
@@ -257,7 +281,7 @@
             // cbxProductorAniosExp
             // 
             cbxProductorAniosExp.FormattingEnabled = true;
-            cbxProductorAniosExp.Items.AddRange(new object[] { "5", "10", "20", "30" });
+            cbxProductorAniosExp.Items.AddRange(new object[] { "Menor a 5 años", "Entre 5 y 10 años", "De 10 a 20 años", "Mas de 20 años" });
             cbxProductorAniosExp.Location = new Point(172, 136);
             cbxProductorAniosExp.Name = "cbxProductorAniosExp";
             cbxProductorAniosExp.Size = new Size(206, 23);
@@ -323,6 +347,9 @@
             // 
             // tpRegistroEmpresaProductor
             // 
+            tpRegistroEmpresaProductor.BackgroundImage = (Image)resources.GetObject("tpRegistroEmpresaProductor.BackgroundImage");
+            tpRegistroEmpresaProductor.BackgroundImageLayout = ImageLayout.Stretch;
+            tpRegistroEmpresaProductor.BorderStyle = BorderStyle.FixedSingle;
             tpRegistroEmpresaProductor.Controls.Add(panel1);
             tpRegistroEmpresaProductor.Location = new Point(4, 24);
             tpRegistroEmpresaProductor.Name = "tpRegistroEmpresaProductor";
@@ -333,6 +360,9 @@
             // 
             // panel1
             // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(dtpVinculacionFechaFin);
             panel1.Controls.Add(dtpVinculacionFechaIni);
             panel1.Controls.Add(lbVinculacionFechaFin);
@@ -343,7 +373,7 @@
             panel1.Controls.Add(lbVinculacionFechaIni);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label4);
-            panel1.Location = new Point(50, 23);
+            panel1.Location = new Point(56, 27);
             panel1.Name = "panel1";
             panel1.Size = new Size(513, 345);
             panel1.TabIndex = 2;
@@ -386,12 +416,15 @@
             // 
             // btnVincualacionGuardar
             // 
-            btnVincualacionGuardar.Location = new Point(205, 221);
+            btnVincualacionGuardar.BackColor = Color.WhiteSmoke;
+            btnVincualacionGuardar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnVincualacionGuardar.FlatStyle = FlatStyle.Popup;
+            btnVincualacionGuardar.Location = new Point(219, 221);
             btnVincualacionGuardar.Name = "btnVincualacionGuardar";
             btnVincualacionGuardar.Size = new Size(75, 23);
             btnVincualacionGuardar.TabIndex = 7;
             btnVincualacionGuardar.Text = "Guardar";
-            btnVincualacionGuardar.UseVisualStyleBackColor = true;
+            btnVincualacionGuardar.UseVisualStyleBackColor = false;
             btnVincualacionGuardar.Click += btnVincualacionGuardar_Click;
             // 
             // txtVinculacionTarjetaProfesional
@@ -442,6 +475,9 @@
             // 
             // tpBuscarVinculacion
             // 
+            tpBuscarVinculacion.BackgroundImage = (Image)resources.GetObject("tpBuscarVinculacion.BackgroundImage");
+            tpBuscarVinculacion.BackgroundImageLayout = ImageLayout.Stretch;
+            tpBuscarVinculacion.BorderStyle = BorderStyle.FixedSingle;
             tpBuscarVinculacion.Controls.Add(panel2);
             tpBuscarVinculacion.Location = new Point(4, 24);
             tpBuscarVinculacion.Name = "tpBuscarVinculacion";
@@ -452,6 +488,9 @@
             // 
             // panel2
             // 
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(dvgConsultaVinculacion);
             panel2.Controls.Add(lbVinculacionNumContratos);
             panel2.Controls.Add(dtpBuscarVincFecha);
@@ -465,6 +504,7 @@
             // 
             // dvgConsultaVinculacion
             // 
+            dvgConsultaVinculacion.BackgroundColor = SystemColors.ScrollBar;
             dvgConsultaVinculacion.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgConsultaVinculacion.Location = new Point(59, 144);
             dvgConsultaVinculacion.Name = "dvgConsultaVinculacion";
@@ -475,7 +515,7 @@
             // 
             lbVinculacionNumContratos.AutoSize = true;
             lbVinculacionNumContratos.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbVinculacionNumContratos.Location = new Point(198, 112);
+            lbVinculacionNumContratos.Location = new Point(195, 110);
             lbVinculacionNumContratos.Name = "lbVinculacionNumContratos";
             lbVinculacionNumContratos.Size = new Size(124, 17);
             lbVinculacionNumContratos.TabIndex = 12;
@@ -484,26 +524,28 @@
             // 
             // dtpBuscarVincFecha
             // 
-            dtpBuscarVincFecha.Location = new Point(172, 33);
+            dtpBuscarVincFecha.Location = new Point(166, 40);
             dtpBuscarVincFecha.Name = "dtpBuscarVincFecha";
             dtpBuscarVincFecha.Size = new Size(200, 23);
             dtpBuscarVincFecha.TabIndex = 10;
             // 
             // btnVinculacionBuscar
             // 
-            btnVinculacionBuscar.Location = new Point(222, 70);
+            btnVinculacionBuscar.BackColor = Color.WhiteSmoke;
+            btnVinculacionBuscar.FlatStyle = FlatStyle.Popup;
+            btnVinculacionBuscar.Location = new Point(217, 84);
             btnVinculacionBuscar.Name = "btnVinculacionBuscar";
             btnVinculacionBuscar.Size = new Size(75, 23);
             btnVinculacionBuscar.TabIndex = 7;
             btnVinculacionBuscar.Text = "Buscar";
-            btnVinculacionBuscar.UseVisualStyleBackColor = true;
+            btnVinculacionBuscar.UseVisualStyleBackColor = false;
             btnVinculacionBuscar.Click += btnVinculacionBuscar_Click;
             // 
             // lbVinculacionFecha
             // 
             lbVinculacionFecha.AutoSize = true;
             lbVinculacionFecha.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbVinculacionFecha.Location = new Point(35, 39);
+            lbVinculacionFecha.Location = new Point(57, 44);
             lbVinculacionFecha.Name = "lbVinculacionFecha";
             lbVinculacionFecha.Size = new Size(87, 17);
             lbVinculacionFecha.TabIndex = 2;
@@ -522,6 +564,9 @@
             // 
             // tpConsultaContrato
             // 
+            tpConsultaContrato.BackgroundImage = (Image)resources.GetObject("tpConsultaContrato.BackgroundImage");
+            tpConsultaContrato.BackgroundImageLayout = ImageLayout.Stretch;
+            tpConsultaContrato.BorderStyle = BorderStyle.FixedSingle;
             tpConsultaContrato.Controls.Add(panel3);
             tpConsultaContrato.Location = new Point(4, 24);
             tpConsultaContrato.Name = "tpConsultaContrato";
@@ -532,10 +577,13 @@
             // 
             // panel3
             // 
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.BorderStyle = BorderStyle.Fixed3D;
             panel3.Controls.Add(lbConsultaContratoNum);
             panel3.Controls.Add(btnConsultaContrato);
             panel3.Controls.Add(label6);
-            panel3.Location = new Point(55, 23);
+            panel3.Location = new Point(49, 26);
             panel3.Name = "panel3";
             panel3.Size = new Size(513, 345);
             panel3.TabIndex = 4;
@@ -543,22 +591,27 @@
             // lbConsultaContratoNum
             // 
             lbConsultaContratoNum.AutoSize = true;
+            lbConsultaContratoNum.BackColor = Color.WhiteSmoke;
+            lbConsultaContratoNum.BorderStyle = BorderStyle.FixedSingle;
             lbConsultaContratoNum.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbConsultaContratoNum.Location = new Point(217, 67);
+            lbConsultaContratoNum.Location = new Point(230, 177);
+            lbConsultaContratoNum.MinimumSize = new Size(50, 50);
             lbConsultaContratoNum.Name = "lbConsultaContratoNum";
-            lbConsultaContratoNum.Size = new Size(23, 17);
+            lbConsultaContratoNum.Size = new Size(50, 50);
             lbConsultaContratoNum.TabIndex = 8;
-            lbConsultaContratoNum.Text = "___";
             lbConsultaContratoNum.TextAlign = ContentAlignment.TopRight;
+            lbConsultaContratoNum.Click += lbConsultaContratoNum_Click;
             // 
             // btnConsultaContrato
             // 
-            btnConsultaContrato.Location = new Point(217, 27);
+            btnConsultaContrato.BackColor = Color.WhiteSmoke;
+            btnConsultaContrato.FlatStyle = FlatStyle.Popup;
+            btnConsultaContrato.Location = new Point(204, 99);
             btnConsultaContrato.Name = "btnConsultaContrato";
-            btnConsultaContrato.Size = new Size(75, 23);
+            btnConsultaContrato.Size = new Size(109, 40);
             btnConsultaContrato.TabIndex = 7;
             btnConsultaContrato.Text = "Consultar Contratos";
-            btnConsultaContrato.UseVisualStyleBackColor = true;
+            btnConsultaContrato.UseVisualStyleBackColor = false;
             btnConsultaContrato.Click += btnConsultaContrato_Click;
             // 
             // label6
@@ -575,8 +628,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LemonChiffon;
             ClientSize = new Size(796, 450);
             Controls.Add(tbcGestion);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Record Company";
             tbcGestion.ResumeLayout(false);

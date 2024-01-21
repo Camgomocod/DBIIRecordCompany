@@ -69,8 +69,8 @@ namespace DBIIRecordCompany
 
             rcCod = int.Parse(txtVinculacionIdentificacion.Text);
             profCard = int.Parse(txtVinculacionTarjetaProfesional.Text);
-            startDate = dtpVinculacionFechaIni.Value.ToString();
-            finalDate = dtpVinculacionFechaFin.Value.ToString();
+            startDate = dtpVinculacionFechaIni.Value.ToString("yyyy-MM-dd");
+            finalDate = dtpVinculacionFechaFin.Value.ToString("yyyy-MM-dd");
 
             r = cn.insertWork(rcCod, profCard, startDate, finalDate);
             generalMessage(r);
@@ -79,11 +79,11 @@ namespace DBIIRecordCompany
         private void btnVinculacionBuscar_Click(object sender, EventArgs e)
         {
             DataSet dsResult = new DataSet();
-            
+
             DateTime selectDate = dtpBuscarVincFecha.Value;
             dsResult = cn.GetRecordsByStartDate(selectDate);
 
-            if(dsResult.Tables.Count == 0 || dsResult.Tables[0].Rows.Count == 0)
+            if (dsResult.Tables.Count == 0 || dsResult.Tables[0].Rows.Count == 0)
             {
                 MessageBox.Show($"No se encontraron registros para la fecha {selectDate.ToString("yyy-MM-dd")}");
                 return;
@@ -91,20 +91,26 @@ namespace DBIIRecordCompany
 
             dvgConsultaVinculacion.DataSource = dsResult;
             dvgConsultaVinculacion.DataMember = "dataResult";
-        }   
+        }
 
         private void btnConsultaContrato_Click(object sender, EventArgs e)
         {
-            
+
             int numContracts;
-            
+
             numContracts = cn.getActiveContracts();
-            if(numContracts < 0) {
+            if (numContracts < 0)
+            {
                 MessageBox.Show($"No se encontraron contratos vigenetes ! ");
                 return;
             }
 
             lbConsultaContratoNum.Text = cn.getActiveContracts().ToString();
+        }
+
+        private void lbConsultaContratoNum_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

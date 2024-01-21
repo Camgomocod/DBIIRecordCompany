@@ -85,7 +85,7 @@ namespace BdRecordCompany.OracleConection
                 if (!existRCompany(rcCod)) throw new InvalidOperationException("No existen Compañías Musicales identificadas con el código ingresado!");
                 if (!existMProducer(profCard)) throw new InvalidOperationException("No existen Productores Musicales identificados con la tarjeta profesional ingresada!");
 
-                string consulta = $"INSERT INTO Works (rcCod, profCard, startDate) VALUES ({rcCod}, {profCard}, TO_DATE('{startDate}', 'YYYY-MM-DD'), TO_DATE('{startDate}', 'YYYY-MM-DD'))";
+                string consulta = $"INSERT INTO Works (rcCod, profCard, startDate, finalDate) VALUES ({rcCod}, {profCard}, TO_DATE('{startDate}', 'YYYY-MM-DD'), TO_DATE('{finalDate}', 'YYYY-MM-DD'))";
 
                 int success = dt.ExecuteDML(consulta);
                 return success;
@@ -96,6 +96,7 @@ namespace BdRecordCompany.OracleConection
                 return 0; // O cualquier otro valor que indique fallo
             }
         }
+
 
         public bool existRCompany(int RCCod)
         {
@@ -147,7 +148,7 @@ namespace BdRecordCompany.OracleConection
 
         public int getActiveContracts()
         {
-            string consulta = "SELECT COUNT(*) AS Contratos_Vigentes FROM Works WHERE finalDate IS NULL";
+            string consulta = "SELECT COUNT(*) AS Contratos_Vigentes FROM Works WHERE finalDate IS NOT NULL";
             DataSet result = dt.ExecuteSELECT(consulta);
 
             if (result.Tables.Count > 0 && result.Tables[0].Rows.Count > 0)
